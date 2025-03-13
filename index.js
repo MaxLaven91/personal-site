@@ -48,12 +48,58 @@ document.addEventListener("DOMContentLoaded", function () {
         </svg>
             `;
         const anchor = createAnchor(link, "flex items-center bg-gray-100 rounded-full px-3 py-1.5 text-sm transition-colors hover:text-gray-900 hover:bg-gray-200", icon);
-        socialContainer.appendChild(anchor);
+        socialContainer.appendChild(anchor);    
     });
 
     const headerContainer = document.getElementById("header-links");
     headerLinks.forEach(link => {
         const anchor = createAnchor(link, "text-gray-700 rounded-lg px-3 py-1.5 text-sm transition-colors hover:text-gray-900 hover:bg-gray-100");
         headerContainer.appendChild(anchor);
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const projects = [
+        {
+            image: "https://example.com/home-icon.png",
+            title: "myJet2",
+            description: "This is a description of my project.",
+        }
+    ];
+
+    function createProject(project, anchorClass, divClass, titleClass, descriptionClass) {
+        const anchor = document.createElement("a");
+        anchor.href = project.url || "#";
+        anchor.className = anchorClass;
+
+        const img = document.createElement("img");
+        img.src = project.image || "https://example.com/home-icon.png";
+
+        const div = document.createElement("div");
+        div.className = divClass;
+
+        const h3 = document.createElement("h3");
+        h3.textContent = project.title;
+        h3.className = titleClass;
+
+        const p = document.createElement("p");
+        p.textContent = project.description
+        p.className = descriptionClass;
+
+        img.src = project.image;
+
+        div.appendChild(h3);
+        div.appendChild(p);
+
+        anchor.appendChild(img);
+        anchor.appendChild(div);
+
+        return anchor;
+    }
+
+    const projectsContainer = document.getElementById("projects");
+    projects.forEach(project => {
+        const anchor = createProject(project, "underline-offset-4 space-y-4", "flex flex-col items-center", "font-medium leading-tight", "text-secondary");
+        projectsContainer.appendChild(anchor);
     });
 });
