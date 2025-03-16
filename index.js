@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const headerLinks = [
         {
             name: "Home",
-            url: "./",
+            url: "./index.html",
         },
         {
             name: "About",
@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
         },
         {
             name: "Blog",
-            url: "./",
+            url: "./blog.html",
         },
     ];
 
@@ -61,8 +61,13 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener("DOMContentLoaded", function () {
     const projects = [
         {
-            image: "https://example.com/home-icon.png",
+            image: "https://images.unsplash.com/photo-1484788984921-03950022c9ef?q=80&w=3032&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
             title: "myJet2",
+            description: "This is a description of my project.",
+        },
+        {
+            image: "https://example.com/home-icon.png",
+            title: "Jet2 Design System",
             description: "This is a description of my project.",
         }
     ];
@@ -74,6 +79,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const img = document.createElement("img");
         img.src = project.image || "https://example.com/home-icon.png";
+        img.className = "aspect-video overflow-hidden rounded-md bg-secondary";
 
         const div = document.createElement("div");
         div.className = divClass;
@@ -99,7 +105,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const projectsContainer = document.getElementById("projects");
     projects.forEach(project => {
-        const anchor = createProject(project, "underline-offset-4 space-y-4", "flex flex-col items-center", "font-medium leading-tight", "text-secondary");
+        const anchor = createProject(project, "underline-offset-4 space-y-4", "flex flex-col items-center", "text-gray-900 w-full text-left", "text-gray-500 w-full text-left");
         projectsContainer.appendChild(anchor);
     });
 });

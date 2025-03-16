@@ -9,19 +9,21 @@
     <title>Max Lavender – UX Designer in Sheffield, building the future of the web</title>
 </head>
 
-<body class="width-full">
+<body class="width-full bg-gray-50">
+    <a href="#main-content" class="sr-only focus:not-sr-only">Skip to main content</a>
     <header>
-        <nav class="mx-auto flex max-w-[700px] items-center justify-end gap-3 px-4 py-3 md:px-6">
+        <nav class="mx-auto flex max-w-[700px] items-center justify-end gap-3 px-4 py-3 md:px-6" aria-label="Main Navigation">
             <!-- <a href="">Max Lavender</a> -->
             <div id="header-links" class="flex gap-1">
                 <div id="nav-indicator" class="absolute bottom-0 h-1 bg-blue-500 rounded-md transition-all duration-300 ease-in-out"></div>
             </div>
         </nav>
     </header>
-    <section class="mx-auto max-w-[700px] px-6 pb-24 pt-16 md:px-6 md:pb-24 md:pt-24">
+    <main id="main-content">
+    <section class="mx-auto max-w-[700px] px-6 pb-16 pt-16 md:px-6 md:pb-24 md:pt-24">
         <div class="flex flex-col gap-8">
-            <div class="space-y-2">
-                <h1 class="text-gray-900">Max Lavender</h1>
+            <div class="space-y-4">
+                <h1 class="animate-in text-3xl font-medium tracking-tight text-gray-900">Hello, I'm Max</h1>
                 <p class="max-w-lg text-gray-500">I’m deeply driven by problem-solving, with a relentless focus on crafting seamless, intuitive solutions that elevate digital products. My obsession lies in enhancing productivity and workflows through structured systems and human-centered design.</p>
             </div>
             <div id="social-links" class="flex animate-in gap-3 text-sm">
@@ -31,12 +33,28 @@
     <section class="mx-auto max-w-[700px] px-6 pb-6 pt-16 md:px-6 md:pb-24 md:pt-24">
         <div class="flex flex-col gap-8">
             <div class="space-y-4">
-                <p class="max-w-lg text-gray-700">Pinned</p>
+                <p class="max-w-lg text-gray-900 font-medium">Projects</p>
 
                 <ul class="animated-list -mx-6 flex snap-x snap-mandatory scroll-pl-6 grid-cols-2 flex-nowrap gap-9 overflow-x-scroll px-6 md:grid md:overflow-auto" id="projects"></ul>
             </div>
         </div>
     </section>
+    <section class="mx-auto max-w-[700px] px-6 pb-6 pt-16 md:px-6 md:pb-24 md:pt-24">
+        <div class="flex flex-col gap-8">
+            <div class="space-y-4">
+                <p class="max-w-lg text-gray-700">Latest blog</p>
+
+                <ul class="animated-list -mx-6 flex snap-x snap-mandatory scroll-pl-6 grid-cols-2 flex-nowrap gap-9 overflow-x-scroll px-6 md:grid md:overflow-auto" id="projects"></ul>
+            </div>
+        </div>
+    </section>
+    </main>
+    <footer>
+        <div class="mx-auto flex max-w-[700px] items-center justify-between gap-3 px-4 py-3 md:px-6">
+            <p class="text-gray-500 text-sm">© Max Lavender 2025</p>
+            <p class="text-gray-500 text-sm">Built using HTML, <a href="">Tailwind</a> and vanilla JS.</p>
+        </div>
+    </footer>
     <script src="./index.js"></script>
 </body>
 
