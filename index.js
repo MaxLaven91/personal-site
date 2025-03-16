@@ -64,6 +64,7 @@ document.addEventListener("DOMContentLoaded", function () {
             image: "https://images.unsplash.com/photo-1484788984921-03950022c9ef?q=80&w=3032&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
             title: "myJet2",
             description: "This is a description of my project.",
+            url: "./myjet2.html"
         },
         {
             image: "https://example.com/home-icon.png",
@@ -109,3 +110,26 @@ document.addEventListener("DOMContentLoaded", function () {
         projectsContainer.appendChild(anchor);
     });
 });
+
+function checkPassword () {
+    const correctHash = "81dc9bdb52d04dc20036dbd8313ed055"; // Hash of "1234"
+    const userInput = document.getElementById("password").value;
+    const userHash = md5(userInput); // Hash the user input
+
+    if (userHash === correctHash) {
+        document.getElementById("protected").style.display = "block";
+        document.getElementById("password").style.display = "none";
+        document.getElementById("password-button").style.display = "none";
+        document.getElementById("password-text").style.display = "none";
+
+    } else {
+        alert("Incorrect password. Please try again.");
+    }
+}
+
+// Simple MD5 Hash Function (Use a proper library in production)
+function md5(string) {
+    return CryptoJS.MD5(string).toString();
+}
+
+document.getElementById("password-button").addEventListener("click", checkPassword);
